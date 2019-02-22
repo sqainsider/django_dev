@@ -1,7 +1,7 @@
 # movies/admin
 
 from django.contrib import admin
-from .models import Genre, Movie
+from .models import Genre, Movie, Country
 
 
 class GenreAdmin(admin.ModelAdmin):
@@ -16,3 +16,4 @@ class MoviesGenreAdmin(admin.ModelAdmin):
 
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Movie, MoviesGenreAdmin)
+admin.site.register(Country)
