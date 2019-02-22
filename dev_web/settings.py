@@ -26,7 +26,8 @@ SECRET_KEY = 'c*vjz=rf--!tv=cfj65$x3fy6i%_-tc^)z#ph6ec_n7@*$o7nr'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'dry-ocean-86988.herokuapp.com'
+    'dry-ocean-86988.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
