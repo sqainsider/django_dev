@@ -25,7 +25,9 @@ SECRET_KEY = 'c*vjz=rf--!tv=cfj65$x3fy6i%_-tc^)z#ph6ec_n7@*$o7nr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'dry-ocean-86988.herokuapp.com'
+]
 
 
 # Application definition
