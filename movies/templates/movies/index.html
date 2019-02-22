@@ -1,0 +1,36 @@
+<!-- table:table>thead>th>tr -->
+
+{% extends 'base.html' %}
+
+
+<h1> Hello World</h1>
+
+{% block content %}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Daily Rate</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for movie  in movies %}
+        <tr>
+            <td>
+                <a href="{{ movie.id }}">{{ movie.title }}
+            </td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.release_year }}</td>
+            <td>{{ movie.daily_rate }}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+{% endblock content %}
+
+</table:table>

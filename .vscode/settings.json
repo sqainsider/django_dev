@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "C:\\Users\\jlai\\.virtualenvs\\dev-A-CN0w_J\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true
+}
