@@ -26,7 +26,7 @@ SECRET_KEY = 'c*vjz=rf--!tv=cfj65$x3fy6i%_-tc^)z#ph6ec_n7@*$o7nr'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'dry-ocean-86988.herokuapp.com'
+    #    'dry-ocean-86988.herokuapp.com'
 ]
 
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'dev_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'dev_web\\templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'dev_web\templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
