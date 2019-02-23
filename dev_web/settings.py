@@ -44,10 +44,8 @@ INSTALLED_APPS = [
     # New Apps
     'movies.apps.MoviesConfig',
     'api.apps.ApiConfig',
-
-    # 'data_validation.apps.DataValidationConfig',
-
-
+    'common.apps.CommonConfig',
+    'splunkDataValidation.apps.SplunkdatavalidationConfig',
 ]
 
 MIDDLEWARE = [

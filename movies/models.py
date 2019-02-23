@@ -3,23 +3,14 @@
 from django.db import models
 from django.utils import timezone
 
+from common.models import Country
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
-
-
-class Country(models.Model):
-    iso_code = models.CharField(max_length=3)
-    country = models.CharField(max_length=30)
-    currency_code = models.CharField(max_length=3)
-    currency = models.CharField(max_length=30)
-    language = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.country
 
 
 class Movie(models.Model):
@@ -29,8 +20,8 @@ class Movie(models.Model):
     daily_rate = models.FloatField()
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=timezone.now)
-    # country = models.CharField(max_length=3)
-    # language = models.CharField(max_length=30)
+    country = models.ForeignKey(
+        'common.country', default='USA', on_delete=models.CASCADE,)
 
     def __str__(self):
         return self.title
