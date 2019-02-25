@@ -1,0 +1,15 @@
+<!-- books/templates/books/book_list.html-->
+
+<h1>All Book</h>
+
+{% for book in object_list %}
+
+<ul>
+    <li>Title>: {{ book.title}}  </li>
+    <li>Subtitle: {{ book.title}}  </li>
+    <li>Author: {{ book.title}}  </li>
+    <li>ISBN: {{ book.title}}  </li>
+
+</ul>
+
+{%  endfor %}

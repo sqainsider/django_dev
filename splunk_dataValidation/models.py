@@ -2,6 +2,34 @@ from django.db import models
 from django.utils import timezone
 
 
+class Document(models.Model):
+    Name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.Name
+
+
+class TestSuite(models.Model):
+    Name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.Name
+
+
+class TestCase(models.Model):
+    Name = models.CharField(max_length=30)
+    TestSuite = models.ForeignKey(
+        TestSuite, on_delete=models.CASCADE,)
+    Expected_result = models.CharField(max_length=255)
+    condition = models.CharField(max_length=255)
+    item = models.CharField(max_length=255)
+
+
+class Environment(models.Model):
+    Name = models.CharField(max_length=10)
+    url = models.CharField(max_length=100)
+
+
 class DV_Result_Log(models.Model):
 
     document = models.CharField(max_length=30)

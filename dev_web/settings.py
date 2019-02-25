@@ -41,16 +41,36 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd party
+    'rest_framework',  # new
+    'corsheaders',  # new rest framework
+    'django_dropbox_storage',  # dropbox storage
+
+    # New APIs
+    'api.apps.ApiConfig',
+
     # New Apps
     'movies.apps.MoviesConfig',
-    'api.apps.ApiConfig',
     'common.apps.CommonConfig',
-    'splunkDataValidation.apps.SplunkdatavalidationConfig',
+    'blog.apps.BlogConfig',
+    'books.apps.BooksConfig',
+    'todos.apps.TodosConfig',
+
+
+    # Splunk
+    'splunk_dataValidation.apps.SplunkDatavalidationConfig',
+
+
+    # WeTrainbasketBall
+    'wtb_coachBlog.apps.WtbCoachblogConfig'
 ]
 
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # new rest framework
+    'django.middleware.common.CommonMiddleware',  # new rest framework
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # new
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # new deployment to heroku
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,6 +78,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# rest framework
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000/'
+)
 
 ROOT_URLCONF = 'dev_web.urls'
 
@@ -130,3 +155,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
+
+DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'

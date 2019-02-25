@@ -20,19 +20,39 @@ from api.models import *
 
 from . import views
 
+# APi Testypie framework
 movie_resource = MovieResource()
 country_resource = CountryResource()
+book_resource = BookResource()
+
 
 # movie_resource.urls
 
 urlpatterns = [
     path('', views.home),
 
+    # Admin
     path('admin/', admin.site.urls),
-    path('movies/', include('movies.urls')),
-    path('splunk/datavalidation/', include('splunkDataValidation.urls')),
 
-    path('api/', include(movie_resource.urls)),
-    path('api/', include(country_resource.urls))
+    # tastypie APIs framework
+    path('examples/api/', include(movie_resource.urls)),
+    path('examples/api/', include(country_resource.urls)),
+    path('examples/api/', include(book_resource.urls)),
+
+
+    # django restful api framework
+    path('examples/api/rest/', include('api.urls')),
+    path('examples/api/rest/', include('todos.urls')),
+
+
+
+    # new APPs
+    path('examples/movies/', include('movies.urls')),
+    path('examples/blog/', include('blog.urls')),
+    path('examples/books/', include('books.urls')),
+
+
+    path('splunk/', include('splunk_dataValidation.urls')),
+
 
 ]
