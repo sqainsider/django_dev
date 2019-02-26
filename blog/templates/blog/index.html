@@ -2,11 +2,14 @@
 
 {% block content %}
 
-    {% for post in object_list  %}
-        <div  class="post-entry">
+    <p1> Blog Home Page </p>
+    {% for post in all_post_list  %}
+        <div  class="post-list">
             <h2><a href="">{{post.title}}</a></h2>
             <p>{{post.body}}</p>
         </div>
     {% endfor %}
+    <a href="{% url 'post_new' %}"> + New Blog Post</a?
+    
 
 {% endblock content %}

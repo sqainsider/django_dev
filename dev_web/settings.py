@@ -46,19 +46,22 @@ INSTALLED_APPS = [
     'corsheaders',  # new rest framework
     'django_dropbox_storage',  # dropbox storage
 
+    'common.apps.CommonConfig',
+
+
     # New APIs
     'api.apps.ApiConfig',
+    'apiRest.apps.ApirestConfig',
 
     # New Apps
     'movies.apps.MoviesConfig',
-    'common.apps.CommonConfig',
     'blog.apps.BlogConfig',
     'books.apps.BooksConfig',
     'todos.apps.TodosConfig',
 
 
     # Splunk
-    'splunk_dataValidation.apps.SplunkDatavalidationConfig',
+    'splunk.apps.SplunkConfig',
 
 
     # WeTrainbasketBall
@@ -89,7 +92,7 @@ ROOT_URLCONF = 'dev_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'dev_web//templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'common//templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,6 +164,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'

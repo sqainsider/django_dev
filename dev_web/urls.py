@@ -34,6 +34,12 @@ urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
 
+    path('', include('common.urls')),
+
+    # User Account
+    path('users/', include('django.contrib.auth.urls')),
+
+
     # tastypie APIs framework
     path('examples/api/', include(movie_resource.urls)),
     path('examples/api/', include(country_resource.urls)),
@@ -41,8 +47,9 @@ urlpatterns = [
 
 
     # django restful api framework
-    path('examples/api/rest/', include('api.urls')),
-    path('examples/api/rest/', include('todos.urls')),
+    # path('examples/api/rest/', include('api.urls')),
+    # path('examples/api/rest/', include('todos.urls')),
+    path('examples/api/rest/', include('apiRest.urls')),
 
 
 
@@ -52,7 +59,7 @@ urlpatterns = [
     path('examples/books/', include('books.urls')),
 
 
-    path('splunk/', include('splunk_dataValidation.urls')),
+    path('splunk/', include('splunk.urls')),
 
 
 ]

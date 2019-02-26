@@ -11,8 +11,11 @@ from django.urls import reverse_lazy
 #from .models import Post
 
 
-def index(request):
-    return HttpResponse("Home Page")  # testing
+class index(ListView):
+    # return HttpResponse("Home Page")  # testing
+    model = Post
+    template_name = 'blog/index.html'
+    context_object_name = 'all_post_list'
 
 
 class BlogListView(ListView):

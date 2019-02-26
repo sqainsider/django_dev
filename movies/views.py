@@ -11,20 +11,23 @@ def home(request):
 
 def index(request):
 
+    movies = Movie.objects.all()
+    return render(request, 'movies/index.html', {'movies': movies})
+
     # movies = Movie.objects.all()i
     # output = ', ' .join([m.title for m in movies])
     # # return HttpResponse("This is index page of movies")
     # return HttpResponse(output)
-
-    movies = Movie.objects.all()
-    # output = ', ' .join([m.title for m in movies])
-    return render(request, 'movies/index.html', {'movies': movies})
 
     # # SELECT * FROM  movies WHERE release date = 1984
     # Movie.objects.fileter(release_date=1984)
 
     # # select * from movies where id = 1
     # Movie.objects.get(id=1)
+
+
+def about(request):
+    return HttpResponse('Hello from Movies About......')
 
 
 def detail(request, movie_id):

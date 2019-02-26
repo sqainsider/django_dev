@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="admin/">Admin</a>>
+        </li>
+
+        <!-- Dropdown-->      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Splunk
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Data validation</a>
+            <a class="dropdown-item" href="#">Automation</a>
+        
+          </div>
+        </li>
+        
+        <!-- Examples-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Examples
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'movies_index' %}">Movies</a>
+            <a class="dropdown-item" href="{% url 'blog_index' %}">Blog</a>
+            <a class="dropdown-item" href="#">Newspaer</a>
+          </div>
+        </li>
+
+        <!-- Common Setup-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Common Setup
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/examples/Countries/">Countries</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/examples/blog/">Comapanies</a>
+            <a class="dropdown-item" href="#">Companies</a>
+          </div>
+        </li>
+
+
+        <!-- WeTraingbasketball-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            WeTrainBasketball
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Coach Blog</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Blog</a>
+            <a class="dropdown-item" href="#">Newspaer</a>
+          </div>
+        </li>
+
+        <!-- APIs-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            APIs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">ToDos</a>
+            <a class="dropdown-item" href="{% url 'apiRest_books' %}">Books</a>
+            <a class="dropdown-item" href="{% url 'apiRest_movies' %}">Movies</a>
+            
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'apiRest_countries' %}">Countries</a>
+     
+     
+          <div>
+        </li>
+     
+
+
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+</nav>
+
+<!--main class="container"-->
+    {% block content  %}
+    {% endblock   %}
+<!--/main-->
+
+
+</html>
