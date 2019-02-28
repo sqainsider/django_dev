@@ -58,6 +58,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'books.apps.BooksConfig',
     'todos.apps.TodosConfig',
+    'hello.apps.HelloConfig',
+    'media.apps.MediaConfig',
 
 
     # Splunk
@@ -100,6 +102,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Upload Files
+                'django.template.context_processors.media',
+
+
             ],
         },
     },
@@ -117,6 +123,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'LTE.db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -171,3 +189,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 
 DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
+
+# Upload Files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

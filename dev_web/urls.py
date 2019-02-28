@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 # from api.models import MovieResource
 from api.models import *
-
 from . import views
+
+# Upload Files
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 # APi Testypie framework
 movie_resource = MovieResource()
@@ -29,7 +33,7 @@ book_resource = BookResource()
 # movie_resource.urls
 
 urlpatterns = [
-    path('', views.home),
+    # path('/', home),
 
     # Admin
     path('admin/', admin.site.urls),
@@ -49,17 +53,25 @@ urlpatterns = [
     # django restful api framework
     # path('examples/api/rest/', include('api.urls')),
     # path('examples/api/rest/', include('todos.urls')),
-    path('examples/api/rest/', include('apiRest.urls')),
+    # path('examples/api/rest/', include('apiRest.urls')),
 
 
 
     # new APPs
+    # Examples
     path('examples/movies/', include('movies.urls')),
     path('examples/blog/', include('blog.urls')),
     path('examples/books/', include('books.urls')),
+    path('examples/hello/', include('hello.urls')),
+    path('examples/uploadfile/', include('media.urls')),
 
 
     path('splunk/', include('splunk.urls')),
 
 
 ]
+
+# Upload Files
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

@@ -4,7 +4,8 @@ from django.http import HttpResponse, Http404
 
 
 def home(request):
-    return HttpResponse("Home Page")
+    # return HttpResponse("Home Page..........")
+    return render(request, 'home.html')
 
 
 mission = 'This is mission'
